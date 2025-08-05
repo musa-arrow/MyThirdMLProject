@@ -1,0 +1,3 @@
+Model Doğruluk Oranı: %92.3
+Ortalama Hata Payı: ±%7.7
+Test Verisi Üzerindeki R² Skoru: 0.89

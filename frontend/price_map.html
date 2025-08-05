@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_bc6708a04ccc866c619c550ad1782fd6 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_bc6708a04ccc866c619c550ad1782fd6" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_bc6708a04ccc866c619c550ad1782fd6 = L.map(
+                "map_bc6708a04ccc866c619c550ad1782fd6",
+                {
+                    center: [41.0153, 28.955],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_126af08138f4414714eedae1e07573cc = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_126af08138f4414714eedae1e07573cc.addTo(map_bc6708a04ccc866c619c550ad1782fd6);
+        
+    
+            var marker_f47de39e38ddef919108778363d63f7b = L.marker(
+                [40.9919, 29.028],
+                {
+}
+            ).addTo(map_bc6708a04ccc866c619c550ad1782fd6);
+        
+    
+            var icon_f178f0b1d7ef3a7b1c53f20ab10a93e6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_30759fde0556b0db8a478ab3fc07ca44 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f16a3aa7e6ad360e758354dea9facc22 = $(`<div id="html_f16a3aa7e6ad360e758354dea9facc22" style="width: 100.0%; height: 100.0%;">Kadıköy: 3,200,000 TL</div>`)[0];
+                popup_30759fde0556b0db8a478ab3fc07ca44.setContent(html_f16a3aa7e6ad360e758354dea9facc22);
+            
+        
+
+        marker_f47de39e38ddef919108778363d63f7b.bindPopup(popup_30759fde0556b0db8a478ab3fc07ca44)
+        ;
+
+        
+    
+    
+                marker_f47de39e38ddef919108778363d63f7b.setIcon(icon_f178f0b1d7ef3a7b1c53f20ab10a93e6);
+            
+    
+            var marker_97754a49f920234aa778064e82c90c57 = L.marker(
+                [41.0438, 29.0094],
+                {
+}
+            ).addTo(map_bc6708a04ccc866c619c550ad1782fd6);
+        
+    
+            var icon_aee43bb3a419250f42429b2e4cfe3a22 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_db9fac7e94a411dede42c9323d54247f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e3f987c50c2bd922fa45dc6fd37ac799 = $(`<div id="html_e3f987c50c2bd922fa45dc6fd37ac799" style="width: 100.0%; height: 100.0%;">Beşiktaş: 4,500,000 TL</div>`)[0];
+                popup_db9fac7e94a411dede42c9323d54247f.setContent(html_e3f987c50c2bd922fa45dc6fd37ac799);
+            
+        
+
+        marker_97754a49f920234aa778064e82c90c57.bindPopup(popup_db9fac7e94a411dede42c9323d54247f)
+        ;
+
+        
+    
+    
+                marker_97754a49f920234aa778064e82c90c57.setIcon(icon_aee43bb3a419250f42429b2e4cfe3a22);
+            
+    
+            var marker_9aac9b93c65d9769ff26220d1229284a = L.marker(
+                [41.022, 29.015],
+                {
+}
+            ).addTo(map_bc6708a04ccc866c619c550ad1782fd6);
+        
+    
+            var icon_d1ea8e313c752a0817fa32b97d500f53 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e66844bdd4be95d0fa1e840ddfcb7c73 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c3b60842803778c96de2215be0366377 = $(`<div id="html_c3b60842803778c96de2215be0366377" style="width: 100.0%; height: 100.0%;">Üsküdar: 2,800,000 TL</div>`)[0];
+                popup_e66844bdd4be95d0fa1e840ddfcb7c73.setContent(html_c3b60842803778c96de2215be0366377);
+            
+        
+
+        marker_9aac9b93c65d9769ff26220d1229284a.bindPopup(popup_e66844bdd4be95d0fa1e840ddfcb7c73)
+        ;
+
+        
+    
+    
+                marker_9aac9b93c65d9769ff26220d1229284a.setIcon(icon_d1ea8e313c752a0817fa32b97d500f53);
+            
+    
+            var marker_fbab9b435561f794a5153add3b749c7a = L.marker(
+                [41.0605, 28.987],
+                {
+}
+            ).addTo(map_bc6708a04ccc866c619c550ad1782fd6);
+        
+    
+            var icon_f8043c16865419acb9ce95a5c38355b8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4d256cf36acbf99cf42384a477434ace = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_999b934c3088fcb4e54439709da23094 = $(`<div id="html_999b934c3088fcb4e54439709da23094" style="width: 100.0%; height: 100.0%;">Şişli: 3,900,000 TL</div>`)[0];
+                popup_4d256cf36acbf99cf42384a477434ace.setContent(html_999b934c3088fcb4e54439709da23094);
+            
+        
+
+        marker_fbab9b435561f794a5153add3b749c7a.bindPopup(popup_4d256cf36acbf99cf42384a477434ace)
+        ;
+
+        
+    
+    
+                marker_fbab9b435561f794a5153add3b749c7a.setIcon(icon_f8043c16865419acb9ce95a5c38355b8);
+            
+    
+            var marker_e9335127aee4948047ab02e87b28cd89 = L.marker(
+                [41.0153, 28.955],
+                {
+}
+            ).addTo(map_bc6708a04ccc866c619c550ad1782fd6);
+        
+    
+            var icon_54cdcbdb53e00e708e147e2b26067a3c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6c03d2e635c5cf9af2fac0f63ccc59c1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8dd9827e8decded9b11992e0c6e5f07d = $(`<div id="html_8dd9827e8decded9b11992e0c6e5f07d" style="width: 100.0%; height: 100.0%;">Fatih: 2,500,000 TL</div>`)[0];
+                popup_6c03d2e635c5cf9af2fac0f63ccc59c1.setContent(html_8dd9827e8decded9b11992e0c6e5f07d);
+            
+        
+
+        marker_e9335127aee4948047ab02e87b28cd89.bindPopup(popup_6c03d2e635c5cf9af2fac0f63ccc59c1)
+        ;
+
+        
+    
+    
+                marker_e9335127aee4948047ab02e87b28cd89.setIcon(icon_54cdcbdb53e00e708e147e2b26067a3c);
+            
+</script>
+</html>

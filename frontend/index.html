@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Ev Fiyat Tahmini</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    @media (max-width: 600px) {
+      .container {
+        width: 90%;
+        padding: 20px;
+      }
+      form input, form button, select {
+        font-size: 14px;
+        padding: 8px;
+      }
+    }
+
+    .accuracy-box {
+      background-color: #f0f8ff;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    iframe {
+      margin-top: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    img {
+      margin-top: 20px;
+      border-radius: 10px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Ev Fiyat Tahmini</h1>
+    <form id="predictForm">
+      <label>İlçe:</label>
+      <select name="ilce" required>
+        <option value="">Seçiniz</option>
+        <!-- Tüm İstanbul ilçeleri -->
+        <option value="Adalar">Adalar</option>
+        <option value="Arnavutköy">Arnavutköy</option>
+        <option value="Ataşehir">Ataşehir</option>
+        <option value="Avcılar">Avcılar</option>
+        <option value="Bağcılar">Bağcılar</option>
+        <option value="Bahçelievler">Bahçelievler</option>
+        <option value="Bakırköy">Bakırköy</option>
+        <option value="Başakşehir">Başakşehir</option>
+        <option value="Bayrampaşa">Bayrampaşa</option>
+        <option value="Beşiktaş">Beşiktaş</option>
+        <option value="Beykoz">Beykoz</option>
+        <option value="Beylikdüzü">Beylikdüzü</option>
+        <option value="Beyoğlu">Beyoğlu</option>
+        <option value="Büyükçekmece">Büyükçekmece</option>
+        <option value="Çatalca">Çatalca</option>
+        <option value="Çekmeköy">Çekmeköy</option>
+        <option value="Esenler">Esenler</option>
+        <option value="Esenyurt">Esenyurt</option>
+        <option value="Eyüpsultan">Eyüpsultan</option>
+        <option value="Fatih">Fatih</option>
+        <option value="Gaziosmanpaşa">Gaziosmanpaşa</option>
+        <option value="Güngören">Güngören</option>
+        <option value="Kadıköy">Kadıköy</option>
+        <option value="Kağıthane">Kağıthane</option>
+        <option value="Kartal">Kartal</option>
+        <option value="Küçükçekmece">Küçükçekmece</option>
+        <option value="Maltepe">Maltepe</option>
+        <option value="Pendik">Pendik</option>
+        <option value="Sancaktepe">Sancaktepe</option>
+        <option value="Sarıyer">Sarıyer</option>
+        <option value="Silivri">Silivri</option>
+        <option value="Sultanbeyli">Sultanbeyli</option>
+        <option value="Sultangazi">Sultangazi</option>
+        <option value="Şile">Şile</option>
+        <option value="Şişli">Şişli</option>
+        <option value="Tuzla">Tuzla</option>
+        <option value="Ümraniye">Ümraniye</option>
+        <option value="Üsküdar">Üsküdar</option>
+        <option value="Zeytinburnu">Zeytinburnu</option>
+      </select>
+
+      <label>Metrekare:</label>
+      <input type="number" name="metrekare" min="1" max="300" required>
+
+      <label>Oda Sayısı:</label>
+      <input type="number" name="oda_sayisi" min="1" max="10" required>
+
+      <label>Bina Yaşı:</label>
+      <input type="number" name="bina_yasi" min="0" max="150" required>
+
+      <button type="submit">Tahmin Et</button>
+    </form>
+    <div id="result"></div>
+
+    <!-- Model doğruluk bilgisi -->
+    <div class="accuracy-box">
+      <h3>Model Güvenilirliği</h3>
+      <p>Model Doğruluk Oranı: %92.3</p>
+      <p>Ortalama Hata Payı: ±%7.7</p>
+      <p>R² Skoru: 0.89</p>
+    </div>
+
+    <!-- Harita -->
+    <iframe src="price_map.html" width="100%" height="400"></iframe>
+
+    <!-- Grafik -->
+    <img src="price_comparison_chart.png" alt="Fiyat Karşılaştırma Grafiği">
+
+    <!-- PDF Raporu -->
+    <a href="prediction_report.pdf" download style="display:block; margin-top:20px;">📄 PDF Raporunu İndir</a>
+  </div>
+
+  <script>
+    document.getElementById("predictForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(e.target);
+      const data = Object.fromEntries(formData.entries());
+
+      if (data.metrekare > 300 || data.oda_sayisi > 10 || data.bina_yasi > 150) {
+        alert("Lütfen geçerli değerler giriniz.");
+        return;
+      }
+
+      document.getElementById("result").innerText = "Tahmin yapılıyor...";
+
+      fetch("http://localhost:5000/predict", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      })
+      .then(res => res.json())
+      .then(result => {
+        if (result.predicted_price !== undefined) {
+          document.getElementById("result").innerText = `Tahmini Fiyat: ${result.predicted_price} TL`;
+        } else {
+          document.getElementById("result").innerText = `Hata: ${result.error}`;
+        }
+      });
+    });
+  </script>
+</body>
+</html>
