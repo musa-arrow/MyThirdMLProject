@@ -12,7 +12,6 @@ Kullanıcıdan alınan metrekare, oda sayısı, bina yaşı ve ilçe bilgilerine
 - [Kurulum](#kurulum)  
 - [Kullanım](#kullanım)  
 - [Model Eğitimi](#model-eğitimi)  
-- [API (Backend)](#api-backend)  
 - [Frontend](#frontend)  
 - [Model Performansı](#model-performansı)  
 - [Katkıda Bulunma](#katkıda-bulunma)  
@@ -125,3 +124,4 @@ Bu proje MIT Lisansı ile lisanslanmıştır.
 Musa Ok – musaok425@gmail.com  
 
 ---
+
