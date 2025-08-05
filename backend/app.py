@@ -2,11 +2,15 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import pandas as pd
 import pickle
+import os  # EKLENDİ
 
 app = Flask(__name__)
 CORS(app)
 
-model = pickle.load(open("model.pkl", "rb"))
+# ✅ model.pkl'e doğru yoldan eriş
+file_path = os.path.join(os.path.dirname(__file__), "model.pkl")
+with open(file_path, "rb") as file:
+    model = pickle.load(file)
 
 @app.route("/")
 def home():
